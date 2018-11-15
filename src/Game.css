@@ -1,0 +1,37 @@
+.Game {
+  text-align: center;
+}
+
+.gameboard {
+  display: inline-grid;
+  width: 600px;
+  height: 600px;
+  background-color: #ddd;
+  margin: 20px 20px 0 20px;
+  grid-gap: 1px;
+}
+p{
+  font-size: 10px;
+}
+
+/* instead of these hardcoded classes, we could set the grid-template style in react based on height/width selection */
+.gameboard-easy {
+  grid-template: repeat(9, 1fr) / repeat(9, 1fr);
+}
+.gameboard-medium {
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+}
+.gameboard-hard {
+  grid-template: repeat(24, 1fr) / repeat(24, 1fr);
+}
+
+.cell {
+  padding: 0;
+}
+.cell[disabled] {
+  background-color: #ddd;
+}
+.cell[disabled].isMine {
+  /* boom */
+  background-color: orangered;
+}
